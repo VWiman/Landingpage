@@ -1,0 +1,235 @@
+:root {
+    --ghost-white: #F8F8FF;
+    --ghost-white-border: #F4F5Fa;
+    --eerie-black: #1B1B1B;
+    --eerie-black-bg: #2A2A2A;
+    --original-blurple: #7289DA;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+
+main.flex-container {
+    flex-direction: column;
+}
+
+header.flex-container {
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    background-color: var(--eerie-black-bg);
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+    border-bottom: 5px solid var(--original-blurple);
+}
+
+footer.flex-container {
+    display: inline-flex;
+    flex-direction: row;
+    color: var(--ghost-white);
+    bottom: 0;
+    background-color: var(--eerie-black-bg);
+    white-space: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: small;
+}
+
+img.logo {
+    height: 70px;
+    width: 70px;
+    align-self: left;
+    justify-self: center;
+}
+
+footer.flex-container img.logo {
+    height: 70px;
+    width: 70px;
+}
+
+ul,
+a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--ghost-white);
+}
+
+li a.menu-button {
+    background-color: var(--ghost-white);
+    color: var(--original-blurple);
+    border: 4px solid var(--ghost-white-border);
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: var(--original-blurple) 0px 0px 10px;
+}
+
+a.section-button {
+    background-color: var(--ghost-white);
+    color: var(--original-blurple);
+    border: 8px solid var(--ghost-white-border);
+    border-radius: 20px;
+    padding: 5px;
+    margin: 20px;
+    box-shadow: var(--original-blurple) 1px 1px 20px;
+}
+section.sell a.section-button {
+    display: inline-flex;
+    background-color: var(--ghost-white);
+    color: var(--original-blurple);
+    border: 8px solid var(--ghost-white-border);
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: var(--original-blurple) 1px 1px 20px;
+}
+
+li .menu-text {
+    margin-inline-end: 20px;
+    white-space: nowrap;
+}
+
+.flex-container.student-card {
+    flex-direction: column;
+    padding: 20px;
+}
+
+.student-image {
+    width: 256px;
+    height: 256px;
+    margin-bottom: 20px;
+    align-self: center;
+    border-radius: 20px;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.hero {
+    background-image: url(./images/outside.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    color: var(--ghost-white);
+    font-size: larger;
+    text-shadow: hsla(0, 100%, 0%, 1) 0px 0px 10px;
+}
+
+section.sell {
+    color: var(--eerie-black);
+    background-color: var(--ghost-white);
+}
+
+section.sell img.student-image {
+    height: 384px;
+    width: 384px;
+    box-shadow: 5px 5px 15px var(--eerie-black);
+}
+
+section.recommend {
+    color: var(--ghost-white);
+    background-color: var(--eerie-black-bg);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section.apply {
+    color: var(--eerie-black);
+    background-color: var(--ghost-white);
+}
+
+.flex-container.sell li {
+    padding: 10px;
+}
+
+.flex-container.sell p,
+.flex-container.sell h4,
+.flex-container.sell h2 {
+    color: var(--eerie-black);
+}
+
+.flex-container.students p {
+    text-align: left;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.flex-container.students {
+    align-items: center;
+}
+
+address {
+    text-align: center;
+    font-style: normal;
+}
+
+@media (max-width: 1200px) {
+    .flex-container.students {
+        flex-direction: column;
+    }
+        section.sell img.student-image {
+            margin-top: 10px; }
+}
+
+@media (max-width: 600px) {
+    .flex-container.students {
+        flex-direction: column;
+    }
+
+    section.sell img.student-image {
+        margin-top: 10px;
+        height: 256px;
+        width: 256px;
+    }
+
+    img.logo {
+        max-height: 50px;
+        max-width: 50px;
+        align-self: left;
+    }
+
+    li a.menu-button {
+        font-size: small;
+    }
+
+    li .menu-text {
+        font-size: small;
+    }
+
+    .student-image {
+        align-self: center;
+    }
+
+    footer.flex-container {
+        display: inline-flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer.flex-container ul li a {
+        margin: 0;
+    }
+
+    address {
+        margin: 10px 0;
+
+    }
+}
