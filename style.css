@@ -1,9 +1,10 @@
 :root {
     --ghost-white: #F8F8FF;
-    --ghost-white-border: #F4F5Fa;
-    --eerie-black: #1B1B1B;
-    --eerie-black-bg: #2A2A2A;
+    --ghost-white-dark: #F4F5Fa;
+    --bright-blue: #747db7;
+    --dark-blue: #4D5380;
     --original-blurple: #7289DA;
+    --original-blurple-white: #b3c2fa;
 }
 
 * {
@@ -30,10 +31,9 @@ header.flex-container {
     flex-direction: row;
     position: sticky;
     top: 0;
-    background-color: var(--eerie-black-bg);
+    background-color: var(--dark-blue);
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 10px;
+    align-items: center;
     border-bottom: 5px solid var(--original-blurple);
 }
 
@@ -42,12 +42,12 @@ footer.flex-container {
     flex-direction: row;
     color: var(--ghost-white);
     bottom: 0;
-    background-color: var(--eerie-black-bg);
+    background-color: var(--dark-blue);
     white-space: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
     font-size: small;
+    padding: 20px;
 }
 
 img.logo {
@@ -55,11 +55,17 @@ img.logo {
     width: 70px;
     align-self: left;
     justify-self: center;
+    padding: 5px;
 }
 
 footer.flex-container img.logo {
     height: 70px;
     width: 70px;
+}
+
+h1 {
+    font-size: 64px;
+    margin: 0 25%;
 }
 
 ul,
@@ -70,35 +76,38 @@ a {
 }
 
 li a.menu-button {
-    background-color: var(--ghost-white);
-    color: var(--original-blurple);
-    border: 4px solid var(--ghost-white-border);
+    background-color: var(--ghost-white-dark);
+    color: var(--dark-blue);
+    border: 4px solid var(--ghost-white);
     border-radius: 10px;
     padding: 2px;
     box-shadow: var(--original-blurple) 0px 0px 10px;
+    margin-right: 30px;
 }
 
 a.section-button {
-    background-color: var(--ghost-white);
-    color: var(--original-blurple);
-    border: 8px solid var(--ghost-white-border);
+    background-color: var(--ghost-white-dark);
+    color: var(--dark-blue);
+    border: 8px solid var(--ghost-white);
     border-radius: 20px;
     padding: 5px;
     margin: 20px;
-    box-shadow: var(--original-blurple) 1px 1px 20px;
+    box-shadow: var(--original-blurple) 0px 0px 20px;
+    text-shadow: none;
 }
+
 section.sell a.section-button {
     display: inline-flex;
-    background-color: var(--ghost-white);
-    color: var(--original-blurple);
-    border: 8px solid var(--ghost-white-border);
+    background-color: var(--ghost-white-dark);
+    color: var(--dark-blue);
+    border: 8px solid var(--ghost-white);
     border-radius: 20px;
     padding: 5px;
-    box-shadow: var(--original-blurple) 1px 1px 20px;
+    box-shadow: var(--original-blurple) 0px 0px 20px;
 }
 
 li .menu-text {
-    margin-inline-end: 20px;
+    margin-right: 10px;
     white-space: nowrap;
 }
 
@@ -116,7 +125,7 @@ li .menu-text {
 }
 
 section {
-    padding: 50px;
+    padding: 48px;
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -133,37 +142,40 @@ section.hero {
 }
 
 section.sell {
-    color: var(--eerie-black);
+    color: var(--bright-blue);
     background-color: var(--ghost-white);
 }
 
 section.sell img.student-image {
     height: 384px;
     width: 384px;
-    box-shadow: 5px 5px 15px var(--eerie-black);
+    box-shadow: 5px 5px 15px var(--bright-blue);
 }
 
 section.recommend {
     color: var(--ghost-white);
-    background-color: var(--eerie-black-bg);
+    background-color: var(--dark-blue);
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 section.apply {
-    color: var(--eerie-black);
+    text-align: center;
+    justify-content: center;
+    color: var(--bright-blue);
     background-color: var(--ghost-white);
 }
 
 .flex-container.sell li {
     padding: 10px;
+    margin: 0 5%;
 }
 
 .flex-container.sell p,
 .flex-container.sell h4,
 .flex-container.sell h2 {
-    color: var(--eerie-black);
+    color: var(--bright-blue);
 }
 
 .flex-container.students p {
@@ -177,16 +189,34 @@ section.apply {
 }
 
 address {
+    justify-content: center;
     text-align: center;
+    flex-direction: column;
     font-style: normal;
+}
+
+.section-button:hover,
+.menu-button:hover,
+section.sell a.section-button:hover {
+    background-color: var(--ghost-white);
+    color: var(--original-blurple);
+    box-shadow: var(--original-blurple-white) 1px 1px 20px;
+    ;
 }
 
 @media (max-width: 1200px) {
     .flex-container.students {
         flex-direction: column;
     }
-        section.sell img.student-image {
-            margin-top: 10px; }
+
+    section.sell img.student-image {
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin: 0 25%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -219,7 +249,7 @@ address {
     }
 
     footer.flex-container {
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
         text-align: center;
     }
@@ -231,5 +261,10 @@ address {
     address {
         margin: 10px 0;
 
+    }
+
+    h1 {
+        font-size: 32px;
+        margin: 0 25%;
     }
 }
